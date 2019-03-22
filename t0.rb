@@ -1,15 +1,8 @@
 
 require 'fugit'; p Fugit::VERSION
 
-cron = Fugit.parse('5 * * * * *')
-p cron
+#cron = Fugit.parse('5 * * * * *')
+cron = Fugit.parse('10 * * * * *')
 
-puts
-t0 = Time.now
-puts
-p cron.previous_time
-p Time.now - t0; t0 = Time.now
-puts
-p cron.previous_time
-p Time.now - t0
-puts
+p cron.previous_time(Time.now.utc)
+
